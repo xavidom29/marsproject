@@ -1,12 +1,41 @@
 <template>
-  <div id="app">
+  <!-- <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
-  </div>
+  </div> -->
+    <v-app style="height: 100vh; overflow:hidden;">
+   
+    <v-main :style="{'background-image': 'url(' + require('./assets/mars2.jpg') + ')'}">
+      <Navbar/>
+      <Home/>
+      <Footer/>
+    </v-main>
+
+  </v-app>
 </template>
+
+<script>
+import Footer from './components/Footer.vue';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
+
+export default {
+  name: 'App',
+
+  components: {
+    Home,
+    Footer,
+    Navbar,
+  },
+
+  data: () => ({
+    drawer: false,
+  }),
+};
+</script>
 
 <style lang="scss">
 #app {
